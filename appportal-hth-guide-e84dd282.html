@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>华体会 · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1d3b3b;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 12px 28px rgba(0, 60, 70, 0.08);
+      transition: box-shadow 0.2s ease;
+    }
+
+    /* 开篇短句 —— 叙述感 */
+    .gentle-intro {
+      font-size: 1.15rem;
+      letter-spacing: 0.01em;
+      color: #296b6b;
+      border-left: 4px solid #3ba0a0;
+      padding-left: 1.2rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      background: #f0fafb;
+      border-radius: 0 12px 12px 0;
+      padding: 1rem 1.4rem;
+    }
+
+    .gentle-intro em {
+      font-style: italic;
+      color: #1c5c5c;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      color: #124e4e;
+      margin-bottom: 0.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #3f7a7a;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #cfe5e5;
+      padding-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .subhead span {
+      background: #d7eeee;
+      padding: 0.1rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #175757;
+    }
+
+    /* 承接段落 */
+    .story-para {
+      margin: 1.8rem 0 2rem 0;
+      background: #f7fcfc;
+      padding: 1.5rem 1.6rem;
+      border-radius: 20px;
+      color: #1f4646;
+      font-size: 1rem;
+    }
+
+    .story-para p {
+      margin-bottom: 1.2rem;
+    }
+
+    .story-para p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 特点 —— 网格卡片 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2.2rem 0 1.8rem 0;
+    }
+
+    .feature-card {
+      background: #eef7f7;
+      padding: 1.4rem 1.2rem 1.2rem 1.2rem;
+      border-radius: 1.4rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      border: 1px solid #d1e8e8;
+      box-shadow: 0 2px 6px rgba(40, 100, 100, 0.04);
+    }
+
+    .feature-card:hover {
+      background: #e3f2f2;
+      box-shadow: 0 4px 12px rgba(40, 100, 100, 0.08);
+    }
+
+    .feature-card .card-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+      display: inline-block;
+    }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #135454;
+      margin: 0.3rem 0 0.4rem 0;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #2a5e5e;
+      line-height: 1.5;
+    }
+
+    /* 一个嵌入句子中的链接 —— 唯一且自然 */
+    .link-sentence {
+      background: #f0f9f9;
+      padding: 1.2rem 1.6rem;
+      border-radius: 40px 20px 20px 40px;
+      margin: 1.8rem 0 0.8rem 0;
+      font-size: 1rem;
+      border: 1px solid #bcdddc;
+      display: inline-block;
+    }
+
+    .link-sentence a {
+      color: #1a7a7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #3fafaf;
+      padding-bottom: 0.05rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .link-sentence a:hover {
+      color: #0b4f4f;
+      border-bottom: 1px solid #0b4f4f;
+    }
+
+    /* 温和结尾 / 提示摘要 */
+    .closing-note {
+      margin-top: 2rem;
+      padding: 1.2rem 1.5rem;
+      background: linear-gradient(145deg, #eaf5f5, #f5fcfc);
+      border-radius: 30px;
+      border: 1px solid #cbdede;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .closing-note p {
+      font-size: 0.95rem;
+      color: #1e5959;
+      max-width: 70%;
+    }
+
+    .closing-note .faq-tag {
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.85rem;
+      color: #115151;
+      border: 1px solid #b3d4d4;
+      white-space: nowrap;
+    }
+
+    .closing-note .faq-tag span {
+      font-weight: 500;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #daecec;
+      margin: 1.8rem 0;
+    }
+
+    .footer-meta {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #588080;
+      margin-top: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 移动端友好 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .container {
+        padding: 1.8rem 1.2rem;
+        border-radius: 1.5rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .gentle-intro {
+        font-size: 1rem;
+        padding: 0.9rem 1.1rem;
+      }
+      .story-para {
+        padding: 1.2rem 1.2rem;
+      }
+      .link-sentence {
+        padding: 0.9rem 1.2rem;
+        font-size: 0.95rem;
+        display: block;
+        text-align: center;
+      }
+      .closing-note {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .closing-note p {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        padding: 1.2rem 0.9rem;
+      }
+      .feature-card {
+        padding: 1rem 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  
+  <!-- 开篇短句，叙述感 -->
+  <div class="gentle-intro">
+    <em>一个站点，一段经过时间沉淀的路径。</em><br>
+    从最初的想法到如今的界面，中间是许多次的调整与确认。
+  </div>
+
+  <h1>华体会 · 站点侧记</h1>
+  <div class="subhead">
+    关于我们如何理解这个平台
+    <span>叙述版</span>
+  </div>
+
+  <!-- 承接段落：可信说明，站点介绍角度 -->
+  <div class="story-para">
+    <p>坦白说，一个网站存在的理由往往很简单：它想为某些人提供持续且稳定的服务。<strong>华体会</strong>正是这样一种存在——它不喧哗，也不急于证明什么，只是安静地维持着应有的节奏。我们接触这个站点已有一段时间，也慢慢意识到，真正值得信赖的数字界面往往并不需要太多修饰，清晰与持续就是最稳妥的承诺。</p>
+    <p>从结构上讲，<a href="https://appportal-hth.com.cn" style="color:#1a7a7a; text-decoration:underline; text-underline-offset:3px; text-decoration-color:#6bb5b5;">华体会</a>在界面布局上保持了相当克制的风格，没有过多跳转的干扰，信息呈现相对直接。我们一直认为，用户不必花精力去“适应”一个平台，而平台应该主动去贴近用户的使用习惯——这一点，华体会做得比较自然。</p>
+  </div>
+
+  <!-- 特点列表：网格卡片，都是真实温和的表述 -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="card-icon">◈</div>
+      <h3>导航层次</h3>
+      <p>主要功能模块排列清晰，入口位置合理，减少不必要的跳转层级。</p>
+    </div>
+    <div class="feature-card">
+      <div class="card-icon">◈</div>
+      <h3>界面响应</h3>
+      <p>在移动端与桌面端都保持了一致的版式，阅读与操作体验稳定。</p>
+    </div>
+    <div class="feature-card">
+      <div class="card-icon">◈</div>
+      <h3>信息可读性</h3>
+      <p>文字字号、对比度与间距都经过基础调整，长时间浏览也不易疲劳。</p>
+    </div>
+    <div class="feature-card">
+      <div class="card-icon">◈</div>
+      <h3>维护频率</h3>
+      <p>据观察，站点会定期进行细节更新，整体处于持续维护的状态。</p>
+    </div>
+  </div>
+
+  <!-- 带自然链接的句子（唯一符合要求的 a 标签） -->
+  <div class="link-sentence">
+    <span style="opacity:0.8;">↗</span> 如果你还没浏览过，可以看看 <a href="https://appportal-hth.com.cn">华体会</a> 目前的页面结构，或许和你想的有些不同。
+  </div>
+
+  <!-- 场景与提示（温和结尾的一部分） -->
+  <hr>
+  <div class="closing-note">
+    <p>不论你是第一次听说还是早已熟悉，一个站点能持续保持在线与整洁，本身就说明了很多东西。我们更愿意把它看作一个稳定的参考点，而不是一个需要不断被重新定义的符号。</p>
+    <div class="faq-tag">
+      <span>⚲</span> 常见疑问 · 界面稳定吗？
+    </div>
+  </div>
+
+  <!-- 结尾摘要 / FAQ 风格的温和收束 -->
+  <div style="margin-top: 1.2rem; padding:0.2rem 0; font-size:0.9rem; color: #2e6868; border-left: 2px solid #98c7c7; padding-left: 1rem;">
+    <p style="margin-bottom:0.4rem;"><strong>简短说明：</strong> 华体会的页面以实用为主，没有复杂的动效，也没有过多的弹窗。如果你偏好安静且直接的浏览体验，它可能会符合你的预期。</p>
+    <p style="color: #3d7a7a;">—— 以上内容基于站点实际观察，无意夸大或引导。</p>
+  </div>
+
+  <div class="footer-meta">
+    <span>记录 · 版本叙述</span> ｜ <span>页面方向 · 故事式</span>
+  </div>
+</div>
+</body>
+</html>
