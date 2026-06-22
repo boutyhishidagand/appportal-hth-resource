@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 走近 hltv官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #fafbfc;
+            color: #1e1e2a;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2.4rem 1.5rem 3.5rem;
+        }
+
+        /* hero 短句区 */
+        .hero-short {
+            margin-top: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-short .sub {
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            font-weight: 400;
+        }
+
+        .hero-short h1 {
+            font-size: 2.4rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-short p {
+            font-size: 1.1rem;
+            color: #374151;
+            max-width: 560px;
+        }
+
+        /* 承接段落 */
+        .bridge {
+            margin-bottom: 2.8rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid #e2e6ea;
+            border-bottom: 1px solid #e2e6ea;
+        }
+
+        .bridge p {
+            font-size: 1rem;
+            color: #2d3748;
+            margin-bottom: 0.9rem;
+        }
+
+        .bridge p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 – 卡片式 */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            padding: 1.5rem 1.8rem;
+            border-radius: 20px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #edf0f3;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0b1a2e;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #3f4a5a;
+        }
+
+        /* 温和提示 / 访问提醒 */
+        .gentle-note {
+            background: #f0f3f8;
+            border-radius: 24px;
+            padding: 2rem 2rem 2.2rem;
+            margin: 2.4rem 0 2.8rem;
+        }
+
+        .gentle-note h2 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            margin-bottom: 0.75rem;
+            color: #0f1c2e;
+        }
+
+        .gentle-note p {
+            font-size: 0.98rem;
+            color: #2d3b4e;
+            margin-bottom: 0.8rem;
+        }
+
+        .gentle-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 内联链接样式 - 只用于段落中的a标签 */
+        .inline-link {
+            color: #1d4ed8;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b0caf5;
+            transition: color 0.15s, text-decoration-color 0.2s;
+        }
+
+        .inline-link:hover {
+            color: #0b2f7a;
+            text-decoration-color: #1d4ed8;
+        }
+
+        /* FAQ 摘要（极简） */
+        .faq-mini {
+            margin-top: 1.2rem;
+            border-top: 1px solid #e2e6ea;
+            padding-top: 2rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.9rem;
+            border-bottom: 1px solid #eceff3;
+            padding-bottom: 0.7rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 470;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #1e293b;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini summary::before {
+            content: "▸";
+            display: inline-block;
+            margin-right: 0.6rem;
+            color: #6f7d91;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .faq-mini details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-mini .answer {
+            padding: 0.5rem 0 0.3rem 1.5rem;
+            font-size: 0.93rem;
+            color: #3b4b5e;
+        }
+
+        .faq-mini .answer a {
+            color: #1d4ed8;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* 结尾 */
+        .closing {
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            color: #4b5563;
+            border-top: 1px solid #e2e6ea;
+            padding-top: 1.8rem;
+            text-align: left;
+        }
+
+        .closing p {
+            margin-bottom: 0.5rem;
+        }
+
+        .closing .small-meta {
+            color: #7c8798;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 520px) {
+            .container {
+                padding: 1.8rem 1.2rem 2.8rem;
+            }
+
+            .hero-short h1 {
+                font-size: 1.9rem;
+            }
+
+            .feature-item {
+                padding: 1.2rem 1.3rem;
+            }
+
+            .gentle-note {
+                padding: 1.4rem 1.3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-short h1 {
+                font-size: 1.6rem;
+            }
+
+            .feature-item h3 {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- hero 短句 -->
+        <div class="hero-short">
+            <div class="sub">简明指南 · 从零开始的路径</div>
+            <h1>一个站点，一种节奏</h1>
+            <p>每天都有许多人在寻找关于 HLTV 的最新资讯和赛事数据。在这篇简短介绍里，我们试着把最重要的线索串联起来，让第一次接触的朋友也能从容地找到方向。</p>
+        </div>
+
+        <!-- 承接段落：背景与提醒 -->
+        <div class="bridge">
+            <p>无论你是因为一场精彩的比赛，还是因为朋友推荐而听说 HLTV，这个社区都有一套自己的信息逻辑。<strong>理解它的结构</strong>并不复杂，但需要一点点耐心。很多新朋友会直接开始翻阅新闻，却忽略了更底层的统计与存档功能——而这些恰恰是 HLTV 最独特的价值所在。</p>
+            <p>换句话说，如果你能花几分钟了解页面的组织方式，后续的浏览体验会高效很多。这就像进入一座图书馆之前，先看一眼索引。</p>
+        </div>
+
+        <!-- 特点列表（卡片） -->
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>清晰的赛程与结果</h3>
+                <p>主页上方的「Matches」区域会列出近期和正在进行中的赛事对局。点击任何一场比赛，都能看到选手数据、地图记录以及局内关键事件。不用在多个页面之间反复跳转。</p>
+            </div>
+            <div class="feature-item">
+                <h3>深度数据层</h3>
+                <p>除了新闻和比分，HLTV 还保留了大量历史统计：选手 rating、队伍排名、地图胜率、过往交手记录。这些数据都藏在「Statistics」和「Ranking」板块下，适合需要深入分析的玩家。</p>
+            </div>
+            <div class="feature-item">
+                <h3>事件与专题归档</h3>
+                <p>每个大赛事都会有一个专属页面，汇集了比赛录像、赛后采访、数据对比和高光片段。你可以通过「Events」入口浏览过去的赛事，也可以查看正在进行中的锦标赛主页。</p>
+            </div>
+        </div>
+
+        <!-- 温和提示 / 访问提醒 -->
+        <div class="gentle-note">
+            <h2>访问前的一点提醒</h2>
+            <p>由于网络环境差异，部分地区的用户可能会遇到页面加载缓慢的情况。如果遇到这种情况，可以尝试刷新或更换网络节点。另外，<strong>HLTV 的界面以英文为主</strong>，但关键术语通常配有图标和缩写，浏览门槛其实比想象中低。</p>
+            <p>如果你希望直接进入主站，可以记住下面这个地址：<a href="https://web-hltv.com" class="inline-link">hltv官网</a>。它也是很多社区信息汇总的源头。</p>
+            <p>一个小建议：第一次打开时，可以先花一两分钟看看顶部导航栏的栏目划分，这会在后续浏览时节省不少时间。</p>
+        </div>
+
+        <!-- FAQ 摘要（两个问题） -->
+        <div class="faq-mini">
+            <details>
+                <summary>HLTV 适合完全的新手吗？</summary>
+                <div class="answer">适合。虽然内容偏专业，但赛程、结果和排名都是以直观的方式呈现。你可以从「News」板块开始了解最近的动态，再逐步探索数据功能。</div>
+            </details>
+            <details>
+                <summary>除了桌面端，有移动版吗？</summary>
+                <div class="answer">HLTV 没有独立的手机应用，但它的网页在移动浏览器上做了适配。你可以直接通过 <a href="https://web-hltv.com">hltv官网</a> 在手机上访问，横屏阅读体验会更好一些。</div>
+            </details>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            <p>希望这篇简短介绍能帮你更快地进入状态。HLTV 的世界很丰富，从赛前预测到赛后复盘，每一层都有值得细看的内容。</p>
+            <p class="small-meta">慢慢探索，找到属于自己的节奏就好。</p>
+        </div>
+    </div>
+</body>
+</html>
